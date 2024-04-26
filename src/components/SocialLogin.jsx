@@ -1,26 +1,26 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { LiaFacebookF } from "react-icons/lia";
-// import { useContext } from "react";
-// import { AuthContext } from "../providers/AuthProvider";
-// import { useNavigate, useLocation } from "react-router-dom";
-// import { toast } from "react-toastify";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const SocialLogin = () => {
-    // const { googleLogin, githubLogin, facebookLogin } = useContext(AuthContext);
-    // const navigate = useNavigate();
-    // const location = useLocation();
-    // const from = location?.state || '/';
+    const { googleLogin, githubLogin, facebookLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state || '/';
 
-    // const handleSocialLogin = (socialProvider) => {
-    //     socialProvider()
-    //         .then(result => {
-    //             if (result.user) {
-    //                 toast.success("Successfully Logged In")
-    //                 navigate(`${from}`)
-    //             }
-    //         });
-    // }
+    const handleSocialLogin = (socialProvider) => {
+        socialProvider()
+            .then(result => {
+                if (result.user) {
+                    toast.success("Successfully Logged In")
+                    navigate(`${from}`)
+                }
+            });
+    }
 
     return (
         <div>

@@ -1,10 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
+    const {createUser, updateUserProfile} = useContext(AuthContext);
+    const navigate = useNavigate();
+
     const [show, setShow] = useState(false);
     const handleToggle = () => {
         setShow(!show);
@@ -15,29 +21,29 @@ const Register = () => {
     const onSubmit = (data) => {
         const { fullName, email, pass, confirmPass, photo } = data;
         console.log(data)
-        // if (pass.length < 6) {
-        //     toast.error("Password must be at least 6 characters long");
-        //     return;
-        // }
-        // else if(!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(pass)){
-        //     toast.error("Password must have a uppercase and a lowercase letter");
-        //     return;
-        // }
-        // else if (pass !== confirmPass) {
-        //     toast.error("Password does not match Confirm Password");
-        //     return;
-        // }
-        // createUser(email, pass)
-        //     .then(() => {
-        //         updateUserProfile(fullName, photo)
-        //             .then(() => {
-        //                 navigate('/')
-        //                 toast.success("Successfully Registered")
-        //             });
-        //     })
-        //     .catch((error) => {
-        //         console.log(error.message)
-        //     });
+        if (pass.length < 6) {
+            toast.error("Password must be at least 6 characters long");
+            return;
+        }
+        else if(!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(pass)){
+            toast.error("Password must have a uppercase and a lowercase letter");
+            return;
+        }
+        else if (pass !== confirmPass) {
+            toast.error("Password does not match Confirm Password");
+            return;
+        }
+        createUser(email, pass)
+            .then(() => {
+                updateUserProfile(fullName, photo)
+                    .then(() => {
+                        navigate('/')
+                        toast.success("Successfully Registered")
+                    });
+            })
+            .catch((error) => {
+                console.log(error.message)
+            });
     }
     return (
         <div className="flex flex-col max-w-md mx-auto p-6 rounded-md sm:p-10">
