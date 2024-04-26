@@ -1,11 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import SocialLogin from "../components/SocialLogin"
+import { AuthContext } from "../providers/AuthProvider";
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+    const {signInUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state || '/';
+    
     const [show, setShow] = useState(false);
 
     const handleToggle = () => {
@@ -15,7 +23,15 @@ const Login = () => {
 
     const onSubmit = (data) => {
         const { email, pass } = data;
-        
+        signInUser(email, pass)
+            .then((result) => {
+                if (result.user)
+                    navigate(`${from}`)
+                toast.success("Successfully Logged In")
+            })
+            .catch(() => {
+                toast.error("Invalid Credential")
+            });
     }
     return (
         <div className="flex flex-col max-w-md mx-auto p-6 rounded-md sm:p-10">

@@ -14,11 +14,13 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import { ToastContainer } from 'react-toastify';
 import AuthProvider from './providers/AuthProvider.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
