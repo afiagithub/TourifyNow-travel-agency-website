@@ -9,7 +9,7 @@ export default {
       fontFamily: {
         cav: ['"Caveat"', "cursive"],
         sans: ['"Josefin Sans"', "sans-serif"],
-        rale: ['"Josefin Sans"', "sans-serif"],
+        rale: ['"Raleway"', "sans-serif"],
       },
     },
   },

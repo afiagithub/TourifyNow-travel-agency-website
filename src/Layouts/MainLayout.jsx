@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 const MainLayout = () => {
     return (
-        <div className="font-rale">
+        <div className="font-sans">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

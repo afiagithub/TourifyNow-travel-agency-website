@@ -39,7 +39,7 @@ const Navbar = () => {
                         Tourify<span className="text-[#ff494a]">Now</span></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 text-[#00215E]">
                         {links}
                     </ul>
                 </div>

@@ -1,0 +1,49 @@
+.navbar{
+    z-index: 10;
+    position: relative;
+}
+
+.group{
+    z-index: 5;
+    position: relative;
+}
+
+.slider{
+    height: 80vh;
+}
+
+.slider h1{
+    line-height: 1.5em;
+}
+
+.slider1{
+    background-image: linear-gradient(to bottom, rgba(1, 4, 5, 0.5), rgba(0, 33, 94, 0.5)),
+    url("../public/images/first.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider2{
+    background-image: linear-gradient(to bottom, rgba(1, 4, 5, 0.5), rgba(0, 33, 94, 0.5)),
+    url("../public/images/beach.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider3{
+    background-image: linear-gradient(to bottom, rgba(1, 4, 5, 0.5), rgba(0, 33, 94, 0.5)),
+    url("../public/images/food.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider4{
+    background-image: linear-gradient(to bottom, rgba(1, 4, 5, 0.5), rgba(0, 33, 94, 0.5)),
+    url("../public/images/forest.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
