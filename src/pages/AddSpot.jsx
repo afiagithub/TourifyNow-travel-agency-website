@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../providers/AuthProvider';
 
 const AddSpot = () => {
+    const {user} = useContext(AuthContext);
+    console.log(user)
     const handleAddSpot = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -9,11 +13,15 @@ const AddSpot = () => {
         const location = form.location.value;
         const average_cost = form.average_cost.value;
         const seasonality = form.seasonality.value;
+        const travel_time = form.travel_time.value;
         const totaVisitorsPerYear = form.totaVisitorsPerYear.value;
         const short_description = form.short_description.value;
         const image = form.image.value;
+        const user_name = user.displayName;
+        const user_email = user.email;
 
-        const newTouristSpot = {tourists_spot_name, country_Name, location, average_cost, seasonality, totaVisitorsPerYear, short_description, image};       
+        const newTouristSpot = {tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time,  
+            totaVisitorsPerYear, short_description, image, user_name, user_email};       
 
         fetch("http://localhost:5000/touristSpot", {
             method: "POST",

@@ -1,5 +1,6 @@
 
 
+
 const TouristSpots = () => {
     return (
         <div>
