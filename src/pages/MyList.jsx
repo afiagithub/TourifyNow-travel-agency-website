@@ -18,7 +18,7 @@ const MyList = () => {
     }, [user])
     return (
         <div className="px-5 md:px-10 lg:px-16 py-3 md:py-5 lg:py-6">
-            <div className="overflow-x-auto w-4/5 mx-auto">
+            <div className="overflow-x-auto lg:w-4/5 mx-auto">
                 <table className="table">
                     {/* head */}
                     <thead>

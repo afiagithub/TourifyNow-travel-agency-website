@@ -1,10 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import MainLayout from './Layouts/MainLayout.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
@@ -18,6 +15,7 @@ import ErrorPage from './pages/ErrorPage.jsx';
 import PrivateRoute from './protected/PrivateRoute.jsx';
 import SpotDetails from './pages/SpotDetails.jsx';
 import MyList from './pages/MyList.jsx';
+import UpdateSpot from './pages/UpdateSpot.jsx';
 
 const router = createBrowserRouter([
   {
@@ -58,7 +56,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/myList",
-        element: <PrivateRoute><MyList></MyList></PrivateRoute>,
+        element: <MyList></MyList>,
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateSpot></UpdateSpot>,
+        loader: ({params}) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
       }
     ]
   },
