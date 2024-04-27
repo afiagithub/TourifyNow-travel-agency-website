@@ -17,6 +17,7 @@ import AuthProvider from './providers/AuthProvider.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import PrivateRoute from './protected/PrivateRoute.jsx';
 import SpotDetails from './pages/SpotDetails.jsx';
+import MyList from './pages/MyList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/myList",
+        element: <PrivateRoute><MyList></MyList></PrivateRoute>,
       }
     ]
   },

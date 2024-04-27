@@ -15,7 +15,7 @@ const AllSpots = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 place-items-center mt-10 lg:mt-16">
                 {
-                    allTouristSpots.map(spot => <SingleSpotCard key={spot._id} spot={spot}></SingleSpotCard>)
+                    allTouristSpots.slice(0,6).map(spot => <SingleSpotCard key={spot._id} spot={spot}></SingleSpotCard>)
                 }
             </div>
         </div>

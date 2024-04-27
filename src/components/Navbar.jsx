@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
-    const {user, logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const handleSigOut = () => {
         logOut()
             .then(() => {
@@ -33,6 +33,10 @@ const Navbar = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             {links}
+                            {
+                                user ? <li className="bg-transparent mx-2 font-bold"><NavLink className={({ isActive }) => isActive ? "border-2 border-[#ff494a] text-[#ff494a]"
+                                    : "border-2 border-transparent"} to="/myList">My List</NavLink></li> : ""
+                            }
                         </ul>
                     </div>
                     <Link to="/" className="btn btn-ghost text-3xl font-cav text-[#00215E]">
@@ -41,6 +45,10 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-[#00215E]">
                         {links}
+                        {
+                            user ? <li className="bg-transparent mx-2 font-bold"><NavLink className={({ isActive }) => isActive ? "border-2 border-[#ff494a] text-[#ff494a]"
+                                : "border-2 border-transparent"} to="/myList">My List</NavLink></li> : ""
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -52,11 +60,11 @@ const Navbar = () => {
                             <NavLink onClick={handleSigOut} className="btn bg-[#ff494a] text-white px-4 border-2 border-[#ff494a] 
                     hover:border-[#ff494a] hover:bg-transparent hover:text-[#ff494a]" to="/">LogOut</NavLink>
 
-                        </div>:
-                        <NavLink className="btn bg-[#ff494a] text-white px-8 text-lg border-2 border-[#ff494a] 
+                        </div> :
+                            <NavLink className="btn bg-[#ff494a] text-white px-8 text-lg border-2 border-[#ff494a] 
                         hover:border-[#ff494a] hover:bg-transparent hover:text-[#ff494a]" to="/login">Login</NavLink>
                     }
-                    
+
                 </div>
             </div>
         </div>
