@@ -18,6 +18,7 @@ import MyList from './pages/MyList.jsx';
 import UpdateSpot from './pages/UpdateSpot.jsx';
 import AddCountry from './pages/AddCountry.jsx';
 import AllCountries from './components/AllCountries.jsx';
+import CountryBasedSpot from './pages/CountryBasedSpot.jsx';
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,11 @@ const router = createBrowserRouter([
       {
         path: "/addCountry",
         element: <PrivateRoute><AddCountry></AddCountry></PrivateRoute>,
+      },
+      {
+        path: "/countryBasedSpot/:name",
+        element: <CountryBasedSpot></CountryBasedSpot>,
+        loader: ({params}) => fetch(`http://localhost:5000/countrySpot/${params.name}`)
       },
     ]
   },

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const AllCountries = () => {
     const [countries, setCountries] = useState([])
@@ -21,14 +22,14 @@ const AllCountries = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 place-items-center mt-10 lg:mt-16">
                 {
-                    countries.map(country => <div key={country._id} className="card w-96 h-80 bg-base-100 
+                    countries.map(country => <NavLink to={`/countryBasedSpot/${country.name}`} key={country._id} className="card w-96 h-80 bg-base-100 
                     shadow-xl image-full">
                         <figure><img src={country.image} alt="country" /></figure>
                         <div className="card-body items-center text-center mt-20">
                             <h2 className="card-title text-2xl font-rale">{country.name}</h2>
                             <p>{country.short_description}</p>
                         </div>
-                    </div>)
+                    </NavLink>)
                 }
             </div>
         </div>
