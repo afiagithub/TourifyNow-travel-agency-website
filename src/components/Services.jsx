@@ -3,7 +3,7 @@ import serviceImg from "../../public/images/service.jpg"
 
 const Services = () => {
     return (
-        <div className="my-5 md:my-7 lg:my-10">
+        <div className="my-5 md:my-7 lg:my-10" id="service">
             <div className="container p-6 py-12 mx-auto space-y-12 lg:px-8 lg:max-w-7xl">
                 <div className="text-center mb-5">
                     <h1 className="mt-3 mb-6 text-4xl font-bold text-[#00215E]">Our Services</h1>

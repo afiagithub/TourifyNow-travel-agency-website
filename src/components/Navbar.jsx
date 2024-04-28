@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import iconImg from "../../public/images/icon.png"
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -42,7 +43,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link to="/" className="btn btn-ghost text-3xl font-cav text-[#00215E]">
-                        Tourify<span className="text-[#ff494a]">Now</span></Link>
+                        <img className="w-8" src={iconImg} alt="" /> Tourify<span className="text-[#ff494a]">Now</span></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-[#00215E]">

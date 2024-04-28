@@ -13,7 +13,7 @@ const AllCountries = () => {
     }, [])
 
     return (
-        <div className="mt-5 md:mt-8 lg:mt-20">
+        <div className="mt-5 md:mt-8 lg:mt-20" id="allCountry">
             <div className="text-center mb-5">
                 <h1 className="mt-3 mb-6 text-4xl font-bold text-[#00215E]">Countries</h1>
                 <p className="dark:text-gray-600 w-5/6 lg:w-3/5 mx-auto">Embark on a journey through the vibrant tapestry of

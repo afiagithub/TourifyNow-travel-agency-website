@@ -3,6 +3,7 @@ import AllSpots from "../components/AllSpots";
 import Banner from "../components/Banner";
 import Reviews from "../components/Reviews";
 import Services from "../components/Services";
+import Stats from "../components/Stats";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             <AllCountries></AllCountries>
             <Services></Services>
             <Reviews></Reviews>
+            <Stats></Stats>
         </div>
     );
 };
