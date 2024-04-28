@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 const SpotDetails = () => {
     const tourSpot = useLoaderData()
     console.log(tourSpot)
-    const { _id, tourists_spot_name, country_Name, average_cost, location, short_description, user_name, seasonality,
+    const { tourists_spot_name, country_Name, average_cost, location, short_description, user_name, seasonality,
         travel_time, totaVisitorsPerYear, image } = tourSpot;
     return (
         <div className="hero w-[90%] mx-auto lg:mt-5 text-[#00215E]">

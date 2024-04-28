@@ -1,12 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { Link } from "react-router-dom";
-
+import Swal from 'sweetalert2'
 
 const MyList = () => {
     const { user } = useContext(AuthContext);
     console.log(user)
-    const [count, setCount] = useState(0)
     const [items, setItems] = useState([]);
     useEffect(() => {
         fetch(`http://localhost:5000/myList/${user?.email}`)
@@ -16,6 +15,40 @@ const MyList = () => {
                 setItems(data)
             })
     }, [user])
+
+    const handleDelete = (_id) => {
+        console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/touristSpot/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            const restItems = items.filter(item => item._id !== _id)
+                            setItems(restItems)
+                            console.log(data)
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Tourist Spot has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+            }
+        });
+    }
     return (
         <div className="px-5 md:px-10 lg:px-16 py-3 md:py-5 lg:py-6">
             <div className="overflow-x-auto lg:w-4/5 mx-auto">
@@ -44,8 +77,8 @@ const MyList = () => {
                         hover:border-[#00215E] hover:bg-transparent hover:text-[#00215E]" to={`/update/${item._id}`}>Update</Link>
                                 </td>
                                 <td>
-                                    <Link className="btn bg-[#ff494a] text-white border-2 border-[#ff494a] 
-                        hover:border-[#ff494a] hover:bg-transparent hover:text-[#ff494a]" to={`/delete/${item._id}`}>Delete</Link>
+                                    <button onClick={() => handleDelete(item._id)} className="btn bg-[#ff494a] text-white border-2 border-[#ff494a] 
+                        hover:border-[#ff494a] hover:bg-transparent hover:text-[#ff494a]">Delete</button>
                                 </td>
                             </tr>)
                         }
