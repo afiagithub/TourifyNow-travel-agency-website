@@ -3,13 +3,14 @@ import serviceImg from "../../public/images/service.jpg"
 
 const Services = () => {
     return (
-        <div className="my-5 md:my-7 lg:my-10" id="service">
+        <div className="my-2 md:my-7 lg:my-10" id="service">
             <div className="container p-6 py-12 mx-auto space-y-12 lg:px-8 lg:max-w-7xl">
                 <div className="text-center mb-5">
                     <h1 className="mt-3 mb-6 text-4xl font-bold text-[#00215E]">Our Services</h1>
-                    <p className="dark:text-gray-600 w-5/6 lg:w-3/5 mx-auto">Embark on a journey through the vibrant tapestry of
-                        Southeast Asia, where ancient cultures blend seamlessly with modern marvels. Our curated selection
-                        of top tourist spots offers an unforgettable glimpse into the heart and soul of this enchanting region.</p>
+                    <p className="dark:text-gray-600 w-5/6 lg:w-3/5 mx-auto">At TourifyNow, we're dedicated to 
+                    providing you with unparalleled access to the wonders of Southeast Asia. Our platform offers a 
+                    comprehensive range of services designed to cater to every aspect of your travel experience, 
+                    ensuring that your journey is seamless and memorable.</p>
                 </div>
                 <div>
                     <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">

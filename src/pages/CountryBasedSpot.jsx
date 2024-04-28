@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const CountryBasedSpot = () => {
     const countrySpots = useLoaderData()
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 place-items-center mt-5 lg:mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 place-items-center mt-5 lg:mt-10 mb-10">
             {
                 countrySpots.map(spot => <div key={spot._id} className="card card-compact w-96 shadow-xl">
                     <figure><img className="h-64 w-full" src={spot.image} alt="spot" /></figure>

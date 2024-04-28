@@ -7,7 +7,7 @@ const SpotDetails = () => {
     const { tourists_spot_name, country_Name, average_cost, location, short_description, user_name, seasonality,
         travel_time, totaVisitorsPerYear, image } = tourSpot;
     return (
-        <div className="hero w-[90%] mx-auto lg:mt-5 text-[#00215E]">
+        <div className="hero w-[90%] mx-auto lg:mt-5 text-[#00215E] mb-10">
             <div className="hero-content flex-col lg:flex-row lg:justify-start lg:items-start gap-10">
                 <div className="lg:w-1/2 mx-auto flex flex-col justify-center rounded-3xl">
                     <img src={image} className="rounded-lg shadow-2xl w-full" />

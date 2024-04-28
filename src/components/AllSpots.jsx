@@ -6,7 +6,7 @@ const AllSpots = () => {
     const allTouristSpots = useLoaderData()
 
     return (
-        <div className="mt-10 lg:mt-0" id="alltours">
+        <div className="mt-16 lg:-mt-10" id="alltours">
             <div className="text-center mb-5">
                 <h1 className="mt-3 mb-6 text-4xl font-bold text-[#00215E]">Tourist Spots</h1>
                 <p className="dark:text-gray-600 w-5/6 lg:w-3/5 mx-auto">Embark on a journey through the vibrant tapestry of

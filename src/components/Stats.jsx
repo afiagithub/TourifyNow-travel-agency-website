@@ -5,7 +5,7 @@ import { LiaPlaneSolid } from "react-icons/lia";
 
 const Stats = () => {
     return (
-        <div className="mt-5 mb-20">
+        <div className="mt-10 lg:mt-5 mb-20">
             <section className="p-6 my-6 dark:bg-gray-100 dark:text-gray-800 rounded-xl">
                 <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
                     <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-50 dark:text-gray-800">

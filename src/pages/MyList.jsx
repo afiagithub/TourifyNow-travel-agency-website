@@ -50,12 +50,12 @@ const MyList = () => {
         });
     }
     return (
-        <div className="px-5 md:px-10 lg:px-16 py-3 md:py-5 lg:py-6">
+        <div className="px-5 md:px-10 lg:px-16 py-3 md:py-5 lg:py-6 mb-10">
             <div className="overflow-x-auto lg:w-4/5 mx-auto">
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className="font-rale text-lg">
+                        <tr className="font-rale lg:text-lg">
                             <th></th>
                             <th>Tourist Spot</th>
                             <th>Country</th>

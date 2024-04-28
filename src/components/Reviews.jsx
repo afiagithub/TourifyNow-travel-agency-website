@@ -5,7 +5,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 
 const Reviews = () => {
     return (
-        <div className="my-5 md:my-7 lg:my-16">
+        <div className="my-7 md:my-7 lg:my-16">
             <div className="text-center mb-5">
                 <h1 className="mt-3 mb-10 text-4xl font-bold text-[#00215E]">What Our Clients Say</h1>
             </div>
