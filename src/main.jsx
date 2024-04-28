@@ -17,6 +17,7 @@ import SpotDetails from './pages/SpotDetails.jsx';
 import MyList from './pages/MyList.jsx';
 import UpdateSpot from './pages/UpdateSpot.jsx';
 import AddCountry from './pages/AddCountry.jsx';
+import AllCountries from './components/AllCountries.jsx';
 
 const router = createBrowserRouter([
   {
@@ -67,7 +68,7 @@ const router = createBrowserRouter([
       {
         path: "/addCountry",
         element: <PrivateRoute><AddCountry></AddCountry></PrivateRoute>,
-      }
+      },
     ]
   },
 ]);

@@ -1,3 +1,4 @@
+import AllCountries from "../components/AllCountries";
 import AllSpots from "../components/AllSpots";
 import Banner from "../components/Banner";
 import Reviews from "../components/Reviews";
@@ -9,6 +10,7 @@ const Home = () => {
         <div className="px-5 md:px-10 lg:px-14">
             <Banner></Banner>
             <AllSpots></AllSpots>
+            <AllCountries></AllCountries>
             <Services></Services>
             <Reviews></Reviews>
         </div>
