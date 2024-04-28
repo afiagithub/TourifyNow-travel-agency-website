@@ -61,8 +61,13 @@ const Navbar = () => {
                     hover:border-[#ff494a] hover:bg-transparent hover:text-[#ff494a]" to="/">LogOut</NavLink>
 
                         </div> :
-                            <NavLink className="btn bg-[#ff494a] text-white px-8 text-lg border-2 border-[#ff494a] 
+                            <div className="flex flex-row gap-5">
+                                <NavLink className="btn bg-[#ff494a] text-white text-lg border-2 border-[#ff494a] 
                         hover:border-[#ff494a] hover:bg-transparent hover:text-[#ff494a]" to="/login">Login</NavLink>
+                                <NavLink className="btn bg-[#00215E] text-white text-lg border-2 border-[#00215E] 
+                        hover:border-[#00215E] hover:bg-transparent hover:text-[#00215E]" to="/register">Register</NavLink>
+                            </div>
+
                     }
 
                 </div>
