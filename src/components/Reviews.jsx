@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
 import { Autoplay, Navigation } from 'swiper/modules';
-import bgImg from "../../public/images/cool-background.png"
 
 const Reviews = () => {
     return (
@@ -10,7 +9,8 @@ const Reviews = () => {
             <div className="text-center mb-5">
                 <h1 className="mt-3 mb-10 text-4xl font-bold text-[#00215E]">What Our Clients Say</h1>
             </div>
-            <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            <Swiper navigation={true} modules={[Autoplay, Navigation]}
+                autoplay={{ delay: 2500, disableOnInteraction: false, }} loop={true} className="mySwiper">
                 <SwiperSlide>
                     <div className="hero rounded-xl bg-[url(../../public/images/cool-background.png)]">
                         <div className="hero-content text-center text-neutral-content">

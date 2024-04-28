@@ -16,6 +16,7 @@ import PrivateRoute from './protected/PrivateRoute.jsx';
 import SpotDetails from './pages/SpotDetails.jsx';
 import MyList from './pages/MyList.jsx';
 import UpdateSpot from './pages/UpdateSpot.jsx';
+import AddCountry from './pages/AddCountry.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,14 @@ const router = createBrowserRouter([
         element: <About></About>,
       },
       {
+        path: "/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
+      },
+      {
         path: "/spots",
         element: <TouristSpots></TouristSpots>,
         loader: () => fetch("http://localhost:5000/touristSpot")
@@ -45,15 +54,7 @@ const router = createBrowserRouter([
         path: "/spots/:id",
         element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
-      },
-      {
-        path: "/login",
-        element: <Login></Login>
-      },
-      {
-        path: "/register",
-        element: <Register></Register>
-      },
+      },      
       {
         path: "/myList",
         element: <PrivateRoute><MyList></MyList></PrivateRoute>,
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <UpdateSpot></UpdateSpot>,
         loader: ({params}) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
+      },
+      {
+        path: "/addCountry",
+        element: <PrivateRoute><AddCountry></AddCountry></PrivateRoute>,
       }
     ]
   },

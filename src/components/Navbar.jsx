@@ -21,6 +21,8 @@ const Navbar = () => {
             : "border-2 border-transparent"} to="/spots">Destinations</NavLink></li>
         <li className="bg-transparent mx-2 font-bold"><NavLink className={({ isActive }) => isActive ? "border-2 border-[#ff494a] text-[#ff494a]"
             : "border-2 border-transparent"} to="/addSpots">Add Tourist Spot</NavLink></li>
+        <li className="bg-transparent mx-2 font-bold"><NavLink className={({ isActive }) => isActive ? "border-2 border-[#ff494a] text-[#ff494a]"
+            : "border-2 border-transparent"} to="/addCountry">Add Country</NavLink></li>
 
     </>
     return (
