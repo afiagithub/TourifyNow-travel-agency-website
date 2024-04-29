@@ -19,7 +19,7 @@ const AddSpot = () => {
         const short_description = form.short_description.value;
         const image = form.image.value;
         const user_name = user.displayName;
-        const user_email = user.email;
+        const user_email = user.email || user.uid;
 
         const newTouristSpot = {tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time,  
             totaVisitorsPerYear, short_description, image, user_name, user_email};       

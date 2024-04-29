@@ -8,8 +8,9 @@ const MyList = () => {
     const { user } = useContext(AuthContext);
     console.log(user)
     const [items, setItems] = useState([]);
+    const criteria = user.email || user.uid;
     useEffect(() => {
-        fetch(`http://localhost:5000/myList/${user?.email}`)
+        fetch(`http://localhost:5000/myList/${criteria}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)

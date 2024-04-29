@@ -1,9 +1,17 @@
-import { useLoaderData } from "react-router-dom";
 import SingleSpotCard from "../components/SingleSpotCard"
+import { useEffect, useState } from "react";
 
 
 const AllSpots = () => {
-    const allTouristSpots = useLoaderData()
+    const [allTouristSpots, setAllTouristSpots] = useState([])
+    useEffect(() => {
+        fetch("http://localhost:5000/touristSpot")
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setAllTouristSpots(data)
+            })
+    }, [])
 
     return (
         <div className="mt-16 lg:-mt-10" id="alltours">
@@ -15,7 +23,7 @@ const AllSpots = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 place-items-center mt-10 lg:mt-16">
                 {
-                    allTouristSpots.slice(0,6).map(spot => <SingleSpotCard key={spot._id} spot={spot}></SingleSpotCard>)
+                    allTouristSpots.slice(0, 6).map(spot => <SingleSpotCard key={spot._id} spot={spot}></SingleSpotCard>)
                 }
             </div>
         </div>
