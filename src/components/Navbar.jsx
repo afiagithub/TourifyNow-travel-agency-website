@@ -4,6 +4,8 @@ import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import iconImg from "../../public/images/icon.png"
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
     const [theme, setTheme] = useState(['light']);
@@ -73,9 +75,11 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ? <div className="flex flex-row gap-3">
-                            <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
-                                <button><img className="w-12 h-12 rounded-full" src={user.photoURL || 'https://i.ibb.co/QnTrVRz/icon.jpg'} alt="" /></button>
-                            </div>
+                            <button data-tooltip-id="user_logo" data-tooltip-content={user.displayName}
+                                    data-tooltip-place="bottom">
+                                    <img className="w-12 h-12 rounded-full" 
+                                    src={user.photoURL || 'https://i.ibb.co/QnTrVRz/icon.jpg'} alt="" /></button>
+                            <Tooltip id="user_logo" />
                             <NavLink onClick={handleSigOut} className="btn bg-[#ff494a] text-white px-4 border-2 border-[#ff494a] 
                     hover:border-[#ff494a] hover:bg-transparent hover:text-[#ff494a]" to="/">LogOut</NavLink>
 

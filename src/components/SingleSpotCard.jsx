@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import PropTypes from 'prop-types';
 
 const SingleSpotCard = ({ spot }) => {
     const {_id, tourists_spot_name, average_cost, seasonality, travel_time, totaVisitorsPerYear, image } = spot;
@@ -29,5 +29,15 @@ const SingleSpotCard = ({ spot }) => {
         </div>
     );
 };
+
+SingleSpotCard.propTypes = {
+    spot: PropTypes.object,
+    tourists_spot_name: PropTypes.string,
+    average_cost: PropTypes.string,
+    seasonality: PropTypes.string,
+    travel_time: PropTypes.string,
+    totaVisitorsPerYear: PropTypes.string,
+    image: PropTypes.string,
+}
 
 export default SingleSpotCard;

@@ -13,23 +13,24 @@ const Banner = () => {
                     <div className="slider slider1 flex flex-col items-center justify-center lg:justify-start">
                         <h1 className="lg:mt-24 text-center text-3xl md:text-4xl lg:text-5xl 
                         font-bold w-4/5 lg:w-3/5 capitalize text-primary">Discover the Rich Tapestry of
-                            <span className="text-[#ff494a] text-4xl md:text-5xl lg:text-7xl font-black font-cav"> Southeast Asia</span></h1>
+                            <span className="text-[#ff494a] text-4xl md:text-5xl lg:text-7xl font-black font-cav"> Southeast Asia</span>
+                        </h1>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="slider slider2 flex flex-col items-center justify-center lg:justify-start">
                         <h1 className="lg:mt-24 text-center text-3xl md:text-4xl lg:text-5xl 
-                        font-bold w-4/5 lg:w-3/5 capitalize text-primary">From 
+                        font-bold w-4/5 lg:w-3/5 capitalize text-primary">From
                             <span className="text-[#ff494a] text-4xl md:text-5xl lg:text-6xl font-black font-cav"> Lush Rainforests </span>
-                             to 
+                            to
                             <span className="text-[#ff494a] text-4xl md:text-5xl lg:text-6xl font-black font-cav"> Pristine Beaches</span>
-                            </h1>
+                        </h1>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="slider slider3 flex flex-col items-center justify-center lg:justify-start">
                         <h1 className="lg:mt-24 text-center text-3xl md:text-4xl lg:text-5xl 
-                        font-bold w-4/5 lg:w-3/5 capitalize text-primary"> 
+                        font-bold w-4/5 lg:w-3/5 capitalize text-primary">
                             <span className="text-[#ff494a] text-4xl md:text-5xl lg:text-7xl font-black font-cav"> Indulge </span>
                             in Authentic Cuisine and Cultural Delights</h1>
                     </div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 const AllCountries = () => {
     const [countries, setCountries] = useState([])
@@ -26,8 +27,12 @@ const AllCountries = () => {
                     shadow-xl image-full">
                         <figure><img src={country.image} alt="country" /></figure>
                         <div className="card-body items-center text-center mt-20">
-                            <h2 className="card-title text-2xl font-rale text-[#ff494a]">{country.name}</h2>
+                            <Fade direction={"down"}>
+                                <h2 className="card-title text-2xl font-rale text-[#ff494a]">{country.name}</h2>
+                            </Fade>
+                            <Fade direction={"up"}>
                             <p className="text-gray-200">{country.short_description}</p>
+                            </Fade>
                         </div>
                     </NavLink>)
                 }

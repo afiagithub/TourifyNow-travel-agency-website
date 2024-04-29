@@ -69,7 +69,6 @@ const MyList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
                         {
                             items.map((item, idx) => <tr key={item._id} className="hover">
                                 <th>{idx + 1}</th>

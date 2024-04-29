@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
-
+import PropTypes from 'prop-types';
 
 const SpotDetails = () => {
     const tourSpot = useLoaderData()
@@ -60,5 +60,17 @@ const SpotDetails = () => {
         </div>
     );
 };
+
+SpotDetails.propTypes = {
+    tourists_spot_name: PropTypes.string,
+    country_Name: PropTypes.string,
+    location: PropTypes.string,
+    short_description: PropTypes.string,
+    average_cost: PropTypes.string,
+    seasonality: PropTypes.string,
+    travel_time: PropTypes.string,
+    totaVisitorsPerYear: PropTypes.string,
+    image: PropTypes.string,
+}
 
 export default SpotDetails;

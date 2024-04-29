@@ -1,6 +1,6 @@
 import SingleSpotCard from "../components/SingleSpotCard"
 import { useEffect, useState } from "react";
-
+import { Fade } from "react-awesome-reveal";
 
 const AllSpots = () => {
     const [allTouristSpots, setAllTouristSpots] = useState([])
@@ -21,11 +21,13 @@ const AllSpots = () => {
                     Southeast Asia, where ancient cultures blend seamlessly with modern marvels. Our curated selection
                     of top tourist spots offers an unforgettable glimpse into the heart and soul of this enchanting region.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 place-items-center mt-10 lg:mt-16">
-                {
-                    allTouristSpots.slice(0, 6).map(spot => <SingleSpotCard key={spot._id} spot={spot}></SingleSpotCard>)
-                }
-            </div>
+            <Fade direction={"left"}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 place-items-center mt-10 lg:mt-16">
+                    {
+                        allTouristSpots.slice(0, 6).map(spot => <SingleSpotCard key={spot._id} spot={spot}></SingleSpotCard>)
+                    }
+                </div>
+            </Fade>
         </div>
     );
 };

@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import PropTypes from 'prop-types';
 
 const UpdateSpot = () => {
     const tourSpot = useLoaderData()
@@ -103,5 +104,17 @@ const UpdateSpot = () => {
         </div>
     );
 };
+
+UpdateSpot.propTypes = {
+    tourists_spot_name: PropTypes.string,
+    country_Name: PropTypes.string,
+    location: PropTypes.string,
+    short_description: PropTypes.string,
+    average_cost: PropTypes.string,
+    seasonality: PropTypes.string,
+    travel_time: PropTypes.string,
+    totaVisitorsPerYear: PropTypes.string,
+    image: PropTypes.string,
+}
 
 export default UpdateSpot;
