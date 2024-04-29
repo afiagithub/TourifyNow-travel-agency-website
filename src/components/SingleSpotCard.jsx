@@ -5,7 +5,7 @@ const SingleSpotCard = ({ spot }) => {
     const {_id, tourists_spot_name, average_cost, seasonality, travel_time, totaVisitorsPerYear, image } = spot;
     return (
         <div>
-            <div className="card card-compact w-96 shadow-xl">
+            <div className="card bg-base-100 card-compact w-96 shadow-xl">
                 <figure><img className="h-64 w-full" src={image} alt="spot" /></figure>
                 <div className="card-body">
                     <div className="flex flex-row justify-between items-center flex-grow h-14">
@@ -14,12 +14,12 @@ const SingleSpotCard = ({ spot }) => {
                     </div>
                     <div className="flex flex-row justify-between items-center">
                         <h3 className="text-lg font-bold text-[#ff494a]">
-                            <span className="text-[#00215E] font-semibold">Cost:</span> ${average_cost}</h3>
+                            <span className="text-primary font-semibold">Cost:</span> ${average_cost}</h3>
                         <h3 className="text-lg font-bold text-[#ff494a]">
-                            <span className="text-[#00215E] font-semibold">Duration:</span> {travel_time} days</h3>
+                            <span className="text-primary font-semibold">Duration:</span> {travel_time} days</h3>
                     </div>
                     <h3 className="text-lg font-bold text-[#ff494a]">
-                        <span className="text-[#00215E] font-semibold">Visitor Per Year:</span> {totaVisitorsPerYear}</h3>
+                        <span className="text-primary font-semibold">Visitor Per Year:</span> {totaVisitorsPerYear}</h3>
                     <div className="card-actions justify-end">
                         <Link className="btn w-full bg-[#ff494a] text-white px-8 text-lg border-2 border-[#ff494a] 
                         hover:border-[#ff494a] hover:bg-transparent hover:text-[#ff494a]" to={`/spots/${_id}`}>View Details</Link>

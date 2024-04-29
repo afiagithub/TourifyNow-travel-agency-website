@@ -1,10 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import alertImg from "../../public/images/error.png"
+import { Helmet } from "react-helmet-async";
 
 const ErrorPage = () => {
     const navigate = useNavigate();
     return (
         <div className="flex flex-col justify-center items-center text-center my-10 mx-3">
+            <Helmet>
+                <title>TourifyNow | 404 Page</title>
+            </Helmet>
             <img className="w-52" src={alertImg} alt="" />
             <h1 className="text-3xl font-bold mt-8 mb-2 uppercase">Oops! Page not found</h1>
             <p className="font-semibold text-xl text-[#ff494a]">Sorry the page you are looking for

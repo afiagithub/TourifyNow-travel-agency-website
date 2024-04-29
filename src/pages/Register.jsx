@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const {createUser, updateUserProfile} = useContext(AuthContext);
@@ -47,9 +48,12 @@ const Register = () => {
     }
     return (
         <div className="flex flex-col max-w-md mx-auto p-6 rounded-md sm:p-10 mb-10">
+            <Helmet>
+                <title>TourifyNow | Register</title>
+            </Helmet>
             <div className="mb-8 text-center">
-                <h1 className="my-3 text-4xl font-bold text-[#00215E]">Register</h1>
-                <p className="text-sm dark:text-gray-600">Create your account</p>
+                <h1 className="my-3 text-4xl font-bold text-primary">Register</h1>
+                <p className="text-sm dark:text-secondary">Create your account</p>
             </div>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-12">
                 <div className="space-y-4">
@@ -96,7 +100,7 @@ const Register = () => {
                             border-2 border-[#ff494a] hover:border-[#ff494a] hover:bg-transparent 
                             hover:text-[#ff494a]" />
                     </div>
-                    <p className="px-6 text-sm text-center dark:text-gray-600">Already have an account?
+                    <p className="px-6 text-sm text-center dark:text-secondary">Already have an account?
                         <Link to="/login" className="hover:underline dark:text-[#ff494a] font-bold">
                             Sign in</Link>.
                     </p>

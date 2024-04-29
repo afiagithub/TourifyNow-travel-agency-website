@@ -7,6 +7,7 @@ import SocialLogin from "../components/SocialLogin"
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const {signInUser} = useContext(AuthContext);
@@ -35,9 +36,12 @@ const Login = () => {
     }
     return (
         <div className="flex flex-col max-w-md mx-auto p-6 rounded-md sm:p-10 mb-10">
+            <Helmet>
+                <title>TourifyNow | Login</title>
+            </Helmet>
             <div className="mb-8 text-center">
-                <h1 className="my-3 text-4xl font-bold text-[#00215E]">Sign in</h1>
-                <p className="text-sm dark:text-gray-600">Sign in to access your account</p>
+                <h1 className="my-3 text-4xl font-bold text-primary">Sign in</h1>
+                <p className="text-sm dark:text-secondary">Sign in to access your account</p>
             </div>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-12">
                 <div className="space-y-4">
@@ -50,7 +54,7 @@ const Login = () => {
                     <div className="relative">
                         <div className="flex justify-between mb-2">
                             <label htmlFor="password" className="text-sm">Password</label>
-                            <a rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-600">Forgot password?</a>
+                            <a rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-secondary">Forgot password?</a>
                         </div>
                         <input type={show ? "text" : "password"} name="password" {...register("pass", { required: true })}
                             placeholder="*****" {...register("pass", { required: true })}
@@ -68,7 +72,7 @@ const Login = () => {
                             border-2 border-[#ff494a] hover:border-[#ff494a] hover:bg-transparent 
                             hover:text-[#ff494a]" />
                     </div>
-                    <p className="px-6 text-sm text-center dark:text-gray-600">Don't have an account yet?
+                    <p className="px-6 text-sm text-center dark:text-secondary">Don't have an account yet?
                         <Link to="/register" className="hover:underline dark:text-[#ff494a] font-bold">
                             Sign up</Link>.
                     </p>

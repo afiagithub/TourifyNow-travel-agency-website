@@ -26,7 +26,7 @@ const SocialLogin = () => {
         <div>
             <div className="mt-5 flex flex-row items-center gap-4">
                 <hr className="flex-grow"/>
-                <p className="text-[#00215E]">Or Sign In Using</p>
+                <p className="text-primary">Or Sign In Using</p>
                 <hr className="flex-grow"/>
             </div>
             <div className="mt-5 flex flex-row items-center justify-center gap-5 ">

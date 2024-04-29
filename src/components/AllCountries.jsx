@@ -15,8 +15,8 @@ const AllCountries = () => {
     return (
         <div className="mt-16 lg:mt-20" id="allCountry">
             <div className="text-center mb-5">
-                <h1 className="mt-3 mb-6 text-4xl font-bold text-[#00215E]">Countries</h1>
-                <p className="dark:text-gray-600 w-5/6 lg:w-3/5 mx-auto">Whether you're seeking adventure, 
+                <h1 className="mt-3 mb-6 text-4xl font-bold text-primary">Countries</h1>
+                <p className="dark:text-secondary w-5/6 lg:w-3/5 mx-auto">Whether you're seeking adventure, 
                 relaxation, or cultural immersion, Southeast Asia beckons with endless possibilities for exploration 
                 and discovery.</p>
             </div>
@@ -27,7 +27,7 @@ const AllCountries = () => {
                         <figure><img src={country.image} alt="country" /></figure>
                         <div className="card-body items-center text-center mt-20">
                             <h2 className="card-title text-2xl font-rale text-[#ff494a]">{country.name}</h2>
-                            <p>{country.short_description}</p>
+                            <p className="text-gray-200">{country.short_description}</p>
                         </div>
                     </NavLink>)
                 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from './Layouts/MainLayout.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
@@ -18,6 +18,7 @@ import MyList from './pages/MyList.jsx';
 import UpdateSpot from './pages/UpdateSpot.jsx';
 import AddCountry from './pages/AddCountry.jsx';
 import CountryBasedSpot from './pages/CountryBasedSpot.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
   {
@@ -54,8 +55,8 @@ const router = createBrowserRouter([
       {
         path: "/spots/:id",
         element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
-      },      
+        loader: ({ params }) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
+      },
       {
         path: "/myList",
         element: <PrivateRoute><MyList></MyList></PrivateRoute>,
@@ -63,7 +64,7 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <UpdateSpot></UpdateSpot>,
-        loader: ({params}) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
       },
       {
         path: "/addCountry",
@@ -72,7 +73,7 @@ const router = createBrowserRouter([
       {
         path: "/countryBasedSpot/:name",
         element: <CountryBasedSpot></CountryBasedSpot>,
-        loader: ({params}) => fetch(`http://localhost:5000/countrySpot/${params.name}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/countrySpot/${params.name}`)
       },
     ]
   },
@@ -80,9 +81,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-      <ToastContainer />
-    </AuthProvider>
+    <HelmetProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+        <ToastContainer />
+      </AuthProvider>
+    </HelmetProvider>
   </React.StrictMode>,
 )

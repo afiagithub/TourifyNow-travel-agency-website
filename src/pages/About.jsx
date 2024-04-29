@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import aboutImg from "../../public/images/about.jpg"
 
 const About = () => {
     return (
         <div className="px-5 md:px-10 lg:px-16 py-3 md:py-5 lg:py-6 mb-10">
+            <Helmet>
+                <title>TourifyNow | About US</title>
+            </Helmet>
             <div className="hero lg:mt-5">
                 <div className="flex flex-col lg:flex-row-reverse justify-between gap-5">
                     <img src={aboutImg} className="lg:w-2/5 rounded-lg shadow-2xl" />
@@ -22,7 +26,7 @@ const About = () => {
             </div>
 
             {/* contact section */}
-            <section id="contact" className="py-10 my-10 rounded-2xl dark:text-gray-900">
+            <section id="contact" className="py-10 my-10 rounded-2xl dark:text-secondary">
                 <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
                     <div className="py-6 md:py-0 md:px-6">
                         <h1 className="text-4xl font-bold">Get in touch</h1>

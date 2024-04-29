@@ -6,8 +6,8 @@ const Services = () => {
         <div className="my-2 md:my-7 lg:my-10" id="service">
             <div className="container p-6 py-12 mx-auto space-y-12 lg:px-8 lg:max-w-7xl">
                 <div className="text-center mb-5">
-                    <h1 className="mt-3 mb-6 text-4xl font-bold text-[#00215E]">Our Services</h1>
-                    <p className="dark:text-gray-600 w-5/6 lg:w-3/5 mx-auto">At TourifyNow, we're dedicated to 
+                    <h1 className="mt-3 mb-6 text-4xl font-bold text-primary">Our Services</h1>
+                    <p className="dark:text-secondary w-5/6 lg:w-3/5 mx-auto">At TourifyNow, we're dedicated to 
                     providing you with unparalleled access to the wonders of Southeast Asia. Our platform offers a 
                     comprehensive range of services designed to cater to every aspect of your travel experience, 
                     ensuring that your journey is seamless and memorable.</p>
@@ -20,7 +20,7 @@ const Services = () => {
                                     <TiPointOfInterest className="text-5xl text-[#ff494a]" />
                                 </div>
                                 <div className="ml-4">
-                                    <h4 className="text-lg font-bold font-rale leading-6 text-[#00215E]">
+                                    <h4 className="text-lg font-bold font-rale leading-6 text-primary">
                                         Guided Tours and Activities</h4>
                                     <p className="mt-2">
                                         Dive deep into the rich tapestry of Southeast Asian culture with our guided tours
@@ -34,7 +34,7 @@ const Services = () => {
                                     <TiPointOfInterest className="text-5xl text-[#ff494a]" />
                                 </div>
                                 <div className="ml-4">
-                                    <h4 className="text-lg font-bold font-rale leading-6 text-[#00215E]">
+                                    <h4 className="text-lg font-bold font-rale leading-6 text-primary">
                                         Accommodation Booking</h4>
                                     <p className="mt-2">
                                         Discover a diverse selection of accommodations ranging from luxurious resorts
@@ -47,7 +47,7 @@ const Services = () => {
                                     <TiPointOfInterest className="text-5xl text-[#ff494a]" />
                                 </div>
                                 <div className="ml-4">
-                                    <h4 className="text-lg font-bold font-rale leading-6 text-[#00215E]">
+                                    <h4 className="text-lg font-bold font-rale leading-6 text-primary">
                                         Travel Insurance and Support</h4>
                                     <p className="mt-2">
                                     Travel with peace of mind knowing that you're covered by comprehensive travel 

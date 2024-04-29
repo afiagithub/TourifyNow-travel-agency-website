@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="bg-[#00215e33]">
             <footer className="footer text-base-content px-5 md:px-10 lg:px-14 py-3 md:py-5 lg:py-16">
                 <aside>
-                    <Link to="/" className="btn btn-ghost text-3xl font-cav text-[#00215E]">
+                    <Link to="/" className="btn btn-ghost text-3xl font-cav text-primary">
                         <img className="w-8" src={iconImg} alt="" /> TourifyNow Ltd.</Link>
                     <p>Crafting Memories, One Trip at a Time</p>
                 </aside>

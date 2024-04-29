@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2'
 
 const AddCountry = () => {
@@ -31,9 +32,12 @@ const AddCountry = () => {
     }
     return (
         <div className="flex flex-col max-w-2xl mx-auto p-6 rounded-md sm:p-10 mb-10">
+            <Helmet>
+                <title>TourifyNow | Add Country</title>
+            </Helmet>
             <div className="mb-8 text-center">
-                <h1 className="my-3 text-4xl font-bold text-[#00215E]">Add Country</h1>
-                <p className="text-sm dark:text-gray-600">Provide all necessary information below</p>
+                <h1 className="my-3 text-4xl font-bold text-primary">Add Country</h1>
+                <p className="text-sm dark:text-secondary">Provide all necessary information below</p>
             </div>
             <form onSubmit={handleAddCountry}>
                 <div className="w-full flex flex-col gap-5">

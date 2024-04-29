@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet-async";
 
 const MyList = () => {
     const { user } = useContext(AuthContext);
@@ -51,6 +52,9 @@ const MyList = () => {
     }
     return (
         <div className="px-5 md:px-10 lg:px-16 py-3 md:py-5 lg:py-6 mb-10">
+            <Helmet>
+                <title>TourifyNow | My List</title>
+            </Helmet>
             <div className="overflow-x-auto lg:w-4/5 mx-auto">
                 <table className="table">
                     {/* head */}
@@ -73,8 +77,8 @@ const MyList = () => {
                                 <td>{item.average_cost}</td>
                                 <td>{item.travel_time} days</td>
                                 <td>
-                                    <Link className="btn bg-[#00215E] text-white border-2 border-[#00215E] 
-                        hover:border-[#00215E] hover:bg-transparent hover:text-[#00215E]" to={`/update/${item._id}`}>Update</Link>
+                                    <Link className="btn bg-primary text-white border-2 border-primary 
+                        hover:border-primary hover:bg-transparent hover:text-primary" to={`/update/${item._id}`}>Update</Link>
                                 </td>
                                 <td>
                                     <button onClick={() => handleDelete(item._id)} className="btn bg-[#ff494a] text-white border-2 border-[#ff494a] 
