@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2'
 
-const AddCountry = () => {
+const CountryAttach = () => {
     const handleAddCountry = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -11,7 +11,7 @@ const AddCountry = () => {
 
         const newTouristSpot = {name, short_description, image};
 
-        fetch("http://localhost:5000/countryList", {
+        fetch("https://afia-assignment-10-server.vercel.app/countryList", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -61,4 +61,4 @@ const AddCountry = () => {
     );
 };
 
-export default AddCountry;
+export default CountryAttach;

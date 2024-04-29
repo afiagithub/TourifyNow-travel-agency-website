@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 const AllSpots = () => {
     const [allTouristSpots, setAllTouristSpots] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/touristSpot")
+        fetch("https://afia-assignment-10-server.vercel.app/touristSpot")
             .then(res => res.json())
             .then(data => {
                 console.log(data)

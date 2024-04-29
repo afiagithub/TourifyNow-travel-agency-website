@@ -10,7 +10,7 @@ const MyList = () => {
     const [items, setItems] = useState([]);
     const criteria = user.email || user.uid;
     useEffect(() => {
-        fetch(`http://localhost:5000/myList/${criteria}`)
+        fetch(`https://afia-assignment-10-server.vercel.app/myList/${criteria}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -31,7 +31,7 @@ const MyList = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/touristSpot/${_id}`, {
+                fetch(`https://afia-assignment-10-server.vercel.app/touristSpot/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

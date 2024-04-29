@@ -3,8 +3,8 @@ import Swal from 'sweetalert2'
 import { AuthContext } from '../providers/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 
-const AddSpot = () => {
-    const {user} = useContext(AuthContext);
+const SpotAttach = () => {
+    const { user } = useContext(AuthContext);
     console.log(user)
     const handleAddSpot = (event) => {
         event.preventDefault();
@@ -21,26 +21,29 @@ const AddSpot = () => {
         const user_name = user.displayName;
         const user_email = user.email || user.uid;
 
-        const newTouristSpot = {tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time,  
-            totaVisitorsPerYear, short_description, image, user_name, user_email};       
+        const newTouristSpot = {
+            tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time,
+            totaVisitorsPerYear, short_description, image, user_name, user_email
+        };
 
-        fetch("http://localhost:5000/touristSpot", {
+        fetch("https://afia-assignment-10-server.vercel.app/touristSpot", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
             },
             body: JSON.stringify(newTouristSpot)
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.insertedId){
-                Swal.fire({
-                    title: "Success",
-                    text: "Added New Tourist Spot",
-                    icon: "success"
-                  });
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Success",
+                        text: "Added New Tourist Spot",
+                        icon: "success"
+                    });
+                    form.reset();
+                }
+            })
     }
     return (
         <div className="flex flex-col max-w-2xl mx-auto p-6 rounded-md sm:p-10 mb-10">
@@ -96,4 +99,4 @@ const AddSpot = () => {
     );
 };
 
-export default AddSpot;
+export default SpotAttach;

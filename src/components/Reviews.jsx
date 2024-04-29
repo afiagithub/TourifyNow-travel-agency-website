@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
 import { Autoplay, Navigation } from 'swiper/modules';
-import { Fade } from "react-awesome-reveal";
 
 const Reviews = () => {
     return (
@@ -13,7 +12,7 @@ const Reviews = () => {
             <Swiper navigation={true} modules={[Autoplay, Navigation]}
                     autoplay={{ delay: 2500, disableOnInteraction: false, }} loop={true} className="mySwiper">
                     <SwiperSlide>
-                        <div className="hero rounded-xl bg-[url(../../public/images/cool-background.png)]">
+                        <div className="hero rounded-xl bg-[#ff494ae6]">
                             <div className="hero-content text-center text-neutral-content">
                                 <div className="max-w-xl py-5 lg:py-10">
                                     <img className="rounded-full w-28 h-28 mx-auto mb-8"
@@ -38,7 +37,7 @@ const Reviews = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="hero rounded-xl bg-[url(../../public/images/cool-background.png)]">
+                        <div className="hero rounded-xl bg-[#ff494ae6]">
                             <div className="hero-content text-center text-neutral-content">
                                 <div className="max-w-xl py-5 lg:py-10">
                                     <img className="rounded-full w-28 h-28 mx-auto mb-8"
@@ -63,7 +62,7 @@ const Reviews = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="hero rounded-xl bg-[url(../../public/images/cool-background.png)]">
+                        <div className="hero rounded-xl bg-[#ff494ae6]">
                             <div className="hero-content text-center text-neutral-content">
                                 <div className="max-w-xl py-5 lg:py-10">
                                     <img className="rounded-full w-28 h-28 mx-auto mb-8 object-cover"

@@ -7,12 +7,12 @@ import Services from "../components/Services";
 import Stats from "../components/Stats";
 
 
-const Home = () => {
+const Home = () => {    
     return (
         <div className="px-5 md:px-10 lg:px-14">
             <Helmet>
                 <title>TourifyNow | Home</title>
-            </Helmet>
+            </Helmet>            
             <Banner></Banner>
             <AllSpots></AllSpots>
             <AllCountries></AllCountries>

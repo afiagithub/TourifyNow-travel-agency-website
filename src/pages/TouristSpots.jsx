@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 
 const TouristSpots = () => {
     const [allTouristSpots, setAllTouristSpots] = useState([]);
-    const [urlPath, setUrlPath] = useState('http://localhost:5000/touristSpot');
- 
+    const [urlPath, setUrlPath] = useState('https://afia-assignment-10-server.vercel.app/touristSpot');
+
     const handleSort = (e) => {
         const criteria = e.target.value;
         console.log(criteria)
-        if(criteria === 'cost'){
-            setUrlPath('http://localhost:5000/sortedSpot');
+        if (criteria === 'cost') {
+            setUrlPath('https://afia-assignment-10-server.vercel.app/sortedSpot');
         }
     }
 

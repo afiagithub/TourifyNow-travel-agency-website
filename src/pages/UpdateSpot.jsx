@@ -33,7 +33,7 @@ const UpdateSpot = () => {
             totaVisitorsPerYear, short_description, image, user_name, user_email
         };
 
-        fetch(`http://localhost:5000/touristSpot/${_id}`, {
+        fetch(`https://afia-assignment-10-server.vercel.app/touristSpot/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

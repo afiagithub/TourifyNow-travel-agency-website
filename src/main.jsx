@@ -6,7 +6,6 @@ import MainLayout from './Layouts/MainLayout.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import TouristSpots from './pages/TouristSpots.jsx';
-import AddSpot from './pages/AddSpot.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import { ToastContainer } from 'react-toastify';
@@ -16,9 +15,10 @@ import PrivateRoute from './protected/PrivateRoute.jsx';
 import SpotDetails from './pages/SpotDetails.jsx';
 import MyList from './pages/MyList.jsx';
 import UpdateSpot from './pages/UpdateSpot.jsx';
-import AddCountry from './pages/AddCountry.jsx';
 import CountryBasedSpot from './pages/CountryBasedSpot.jsx';
 import { HelmetProvider } from 'react-helmet-async';
+import SpotAttach from './pages/SpotAttach.jsx';
+import CountryAttach from './pages/CountryAttach.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/touristSpot")
+        loader: () => fetch("https://afia-assignment-10-server.vercel.app/touristSpot")
       },
       {
         path: "/about",
@@ -49,12 +49,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/addSpots",
-        element: <PrivateRoute><AddSpot></AddSpot></PrivateRoute>
+        element: <PrivateRoute><SpotAttach></SpotAttach></PrivateRoute>
       },
       {
         path: "/spots/:id",
         element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
+        loader: ({ params }) => fetch(`https://afia-assignment-10-server.vercel.app/touristSpot/${params.id}`)
       },
       {
         path: "/myList",
@@ -63,16 +63,16 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <UpdateSpot></UpdateSpot>,
-        loader: ({ params }) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
+        loader: ({ params }) => fetch(`https://afia-assignment-10-server.vercel.app/touristSpot/${params.id}`)
       },
       {
         path: "/addCountry",
-        element: <PrivateRoute><AddCountry></AddCountry></PrivateRoute>,
+        element: <PrivateRoute><CountryAttach></CountryAttach></PrivateRoute>,
       },
       {
         path: "/countryBasedSpot/:name",
         element: <CountryBasedSpot></CountryBasedSpot>,
-        loader: ({ params }) => fetch(`http://localhost:5000/countrySpot/${params.name}`)
+        loader: ({ params }) => fetch(`https://afia-assignment-10-server.vercel.app/countryList/${params.name}`)
       },
     ]
   },
